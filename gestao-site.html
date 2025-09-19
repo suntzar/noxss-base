@@ -53,6 +53,10 @@
         color: var(--noxss-accent-primary);
         opacity: 1;
       }
+      .placeholder-content .noxss-card {
+        max-width: 600px;
+        margin: 0 auto;
+      }
       .about-content {
         max-width: 720px;
         margin: 0 auto;
@@ -127,6 +131,8 @@
                     <option value="dark">Noxss Dark</option>
                     <option value="light">Noxss Light</option>
                     <option value="void">Void</option>
+                    <option value="#e0c670-dark">Banana Dark</option>
+                    <option value="#e0c670-light">Banana Light</option>
                   </select>
                 </div>
                 <div class="noxss-form-group">
@@ -171,6 +177,10 @@
           // Para qualquer outro tema ('light', 'void'), nós definimos o atributo.
           if (theme === "dark") {
             htmlElement.removeAttribute("data-theme");
+          } else if (theme.includes("#")) {
+            let colorTheme = theme.split("-")
+            htmlElement.setAttribute("data-noxss-theme-gen", colorTheme[1]);
+            htmlElement.setAttribute("data-noxss-palette-gen", colorTheme[0]);
           } else {
             htmlElement.setAttribute("data-theme", theme);
           }
@@ -188,10 +198,12 @@
           applyTheme(e.target.value);
         });
 
-        // data-noxss-theme-gen="light" data-noxss-palette-gen="#198754"
-        htmlElement.setAttribute("data-noxss-theme-gen", "dark");
+        /* data-noxss-theme-gen="light" data-noxss-palette-gen="#198754"
         htmlElement.setAttribute("data-noxss-theme-gen", "light");
+        htmlElement.setAttribute("data-noxss-theme-gen", "dark");
         htmlElement.setAttribute("data-noxss-palette-gen", "#4d97eb");
+        htmlElement.setAttribute("data-noxss-palette-gen", "#e0c670");
+        */
       });
     </script>
   </body>
