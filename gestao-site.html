@@ -40,10 +40,7 @@
       .placeholder-content {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         text-align: center;
-        height: 100%;
         gap: 1.5rem;
         padding: 2rem;
         color: var(--noxss-text-secondary);
@@ -51,6 +48,7 @@
       .placeholder-content img {
         width: 64px;
         height: 64px;
+        margin: auto;
         stroke-width: 1;
         color: var(--noxss-accent-primary);
         opacity: 1;
@@ -71,7 +69,9 @@
     <div class="noxss-layout">
       <!-- 1. BARRA DE NAVEGAÇÃO SUPERIOR -->
       <nav class="noxss-navbar">
-        <a class="noxss-navbar__brand" href="#"><i data-feather="box" class="noxss-icon"></i> <span>Sistema de Gestão Escolar</span></a>
+        <a class="noxss-navbar__brand" href="#"
+          ><span><img width="24px" height="24px" class="noxss-icon" src="school-material.svg" /></span> <span>Sistema de Gestão Escolar</span></a
+        >
       </nav>
 
       <!-- 2. CONTEÚDO PRINCIPAL COM ABAS -->
@@ -89,10 +89,16 @@
             <!-- Painel: Início -->
             <div class="noxss-tabs__panel" id="panel-home">
               <div class="placeholder-content">
-                <?xml version="1.0" encoding="iso-8859-1"?>
                 <img src="school-material.svg" />
                 <h1 class="h2">Bem-vindo ao Sistema de Gestão Escolar</h1>
-                <p class="lead">Este é um template inicial para construir aplicações web modernas e responsivas. Navegue pelas abas para ver exemplos de conteúdo e componentes.</p>
+                <div class="noxss-card">
+                  <div class="noxss-card__header">
+                    <div class="noxss-card__title">Título do Card</div>
+                  </div>
+                  <div class="noxss-card__body">
+                    <p>Conteúdo principal do card.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
